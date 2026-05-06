@@ -12,3 +12,24 @@ class AddTasks(models.Model):
 
     def __str__(self):
         return self.title
+    
+class UpdateTask(models.Model):
+    status_choice = [
+        ('complate', 'Complate'),
+        ('incomplate', 'Incomplate'),
+        ('high', 'High Priority'),
+    ]
+    tsk = models.OneToOneField(AddTasks, on_delete=models.CASCADE)
+    status = models.CharField(max_length=50, choices= status_choice, default='incomplate')
+    create_at = models.DateTimeField( auto_now=True)
+
+    def __str__(self):
+        return self.tsk.title
+    
+    
+class DeleteTsk(models.Model):
+    task = models.OneToOneField(AddTasks, on_delete=models.CASCADE)
+    create_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.task.title
