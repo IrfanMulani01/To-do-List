@@ -1,0 +1,17 @@
+<table border="1">
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+        <th>Action</th>
+    </tr>
+
+    {% for t in tasks %}
+    <tr>
+        <td>{{ t.title }}</td>
+        <td>{{ t.status }}</td>
+        <td>
+            <a href="{% url 'delete' t.id %}">Delete</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
