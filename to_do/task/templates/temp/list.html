@@ -1,0 +1,12 @@
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Status</th>
+    </tr>
+    {% for tsk in tasks %}
+    <tr>
+        <td>{{ tsk.title }}</td>
+        <td>{{ tsk.status }}</td>
+    </tr>
+    {% endfor %}
+</table>
