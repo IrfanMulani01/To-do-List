@@ -27,9 +27,3 @@ class UpdateTask(models.Model):
         return self.tsk.title
     
     
-class DeleteTsk(models.Model):
-    task = models.OneToOneField(AddTasks, on_delete=models.CASCADE)
-    create_at = models.DateTimeField(auto_now=True)
-
-    def __str__(self):
-        return self.task.title
