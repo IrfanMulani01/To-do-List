@@ -1,18 +1,22 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <title>Home Page</title>
 </head>
 <body>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-        <a href="{% url 'update' %}">Update page</a>
-        <a href="{% url 'list' %}">List page</a>
-        <a href="{% url 'delete' %}">Delete page</a>
-    </form>
-</body>
+    <div class="container">
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit">Submit</button> <br> <br>
+            <a href="{% url 'update' %}">Update page</a> <br>
+            <a href="{% url 'list' %}">List page</a> <br>
+            <a href="{% url 'delete' %}">Delete page</a> <br>
+        </form>
+    </div>
+</body>     
 </html>
