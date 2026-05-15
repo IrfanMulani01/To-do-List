@@ -13,9 +13,9 @@
             {% csrf_token %}
             {{ form.as_p }}
             <button type="submit">Submit</button> <br> <br>
-            <a href="{% url 'update' %}">Update page</a> <br>
-            <a href="{% url 'list' %}">List page</a> <br>
-            <a href="{% url 'delete' %}">Delete page</a> <br>
+            <a class="update" href="{% url 'update' %}">Update page</a> <br>
+            <a class="list" href="{% url 'list' %}">List page</a> <br>
+            <a class="delete" href="{% url 'delete' %}">Delete page</a> <br>
         </form>
     </div>
 </body>     
